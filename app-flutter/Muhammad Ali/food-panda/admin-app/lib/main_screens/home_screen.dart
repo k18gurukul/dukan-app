@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_admin_web_portal/authentication/login_screen.dart';
+import 'package:foodpanda_admin_web_portal/riders/all_blocked_riders_screen.dart';
 import 'package:foodpanda_admin_web_portal/riders/all_verified_riders_screen.dart';
 import 'package:foodpanda_admin_web_portal/sellers/all_blocked_sellers_screen.dart';
 import 'package:foodpanda_admin_web_portal/sellers/all_verified_sellers_screen.dart';
@@ -263,7 +264,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   onPressed: ()
                   {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (c)=> const AllBlockedRidersScreen()));
                   },
                 ),
               ],
