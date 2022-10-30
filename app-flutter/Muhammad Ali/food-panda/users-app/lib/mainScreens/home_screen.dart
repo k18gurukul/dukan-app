@@ -2,10 +2,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:foodpanda_users_app/assistantMethods/assistant_methods.dart';
 import 'package:foodpanda_users_app/authentication/auth_screen.dart';
 import 'package:foodpanda_users_app/global/global.dart';
 import 'package:foodpanda_users_app/models/sellers.dart';
-import 'package:foodpanda_users_app/widgets/info_design.dart';
+import 'package:foodpanda_users_app/widgets/sellers_design.dart';
 import 'package:foodpanda_users_app/widgets/my_drawer.dart';
 import 'package:foodpanda_users_app/widgets/progress_bar.dart';
 
@@ -54,6 +55,13 @@ class _HomeScreenState extends State<HomeScreen>
   ];
 
   @override
+  void initState() {
+    super.initState();
+
+    clearCartNow(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -71,8 +79,9 @@ class _HomeScreenState extends State<HomeScreen>
               )
           ),
         ),
-        title: Text(
-          sharedPreferences!.getString("name")!,
+        title: const Text(
+          "iFood",
+          style: TextStyle(fontSize: 45, fontFamily: "Signatra"),
         ),
         centerTitle: true,
       ),
@@ -139,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen>
                           snapshot.data!.docs[index].data()! as Map<String, dynamic>
                         );
                         //design for display sellers-cafes-restuarents
-                        return InfoDesignWidget(
+                        return SellersDesignWidget(
                           model: sModel,
                           context: context,
                         );
