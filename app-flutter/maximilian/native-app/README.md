@@ -1,6 +1,4 @@
-# NMobile Native features
-
-## The following resources might be helpful:
+# Mobile Native features. The following resources might be helpful:
 
 > Image Picker Package: https://pub.dev/packages/image_picker
 
