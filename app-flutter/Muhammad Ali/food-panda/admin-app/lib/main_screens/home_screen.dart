@@ -1,6 +1,13 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:foodpanda_admin_web_portal/authentication/login_screen.dart';
+import 'package:foodpanda_admin_web_portal/riders/all_verified_riders_screen.dart';
+import 'package:foodpanda_admin_web_portal/sellers/all_blocked_sellers_screen.dart';
+import 'package:foodpanda_admin_web_portal/sellers/all_verified_sellers_screen.dart';
+import 'package:foodpanda_admin_web_portal/users/all_blocked_users_screen.dart';
+import 'package:foodpanda_admin_web_portal/users/all_verified_users_screen.dart';
 import 'package:intl/intl.dart';
 
 
@@ -120,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.person_add, color: Colors.white,),
                   label: Text(
-                    "Activate Users".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "All Verified Users".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -133,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   onPressed: ()
                   {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (c)=> const AllVerifiedUsersScreen()));
                   },
                 ),
 
@@ -143,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.block_flipped, color: Colors.white,),
                   label: Text(
-                    "Block Users".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "All Blocked Users".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -156,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   onPressed: ()
                   {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (c)=> const AllBlockedUsersScreen()));
                   },
                 ),
               ],
@@ -170,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.person_add, color: Colors.white,),
                   label: Text(
-                    "Activate Sellers".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "All Verified Sellers".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -183,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   onPressed: ()
                   {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (c)=> const AllVerifiedSellersScreen()));
                   },
                 ),
 
@@ -193,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.block_flipped, color: Colors.white,),
                   label: Text(
-                    "Block Sellers".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "All Blocked Sellers".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -206,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   onPressed: ()
                   {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (c)=> const AllBlockedSellersScreen()));
                   },
                 ),
               ],
@@ -220,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.person_add, color: Colors.white,),
                   label: Text(
-                    "Activate Riders".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "All Verified Riders".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -233,7 +240,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   onPressed: ()
                   {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (c)=> const AllVerifiedRidersScreen()));
                   },
                 ),
 
@@ -243,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.block_flipped, color: Colors.white,),
                   label: Text(
-                    "Block Riders".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "All Blocked Riders".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -279,7 +286,8 @@ class _HomeScreenState extends State<HomeScreen>
               ),
               onPressed: ()
               {
-
+                FirebaseAuth.instance.signOut();
+                Navigator.push(context, MaterialPageRoute(builder: (c)=> const LoginScreen()));
               },
             ),
           ],
