@@ -1,10 +1,6 @@
 import 'dart:async';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:foodpanda_admin_web_portal/authentication/login_screen.dart';
-import 'package:foodpanda_admin_web_portal/users/all_blocked_users_screen.dart';
-import 'package:foodpanda_admin_web_portal/users/all_verified_users_screen.dart';
 import 'package:intl/intl.dart';
 
 
@@ -124,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.person_add, color: Colors.white,),
                   label: Text(
-                    "All Verified Users".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "Activate Users".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -137,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   onPressed: ()
                   {
-                    Navigator.push(context, MaterialPageRoute(builder: (c)=> const AllVerifiedUsersScreen()));
+
                   },
                 ),
 
@@ -147,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.block_flipped, color: Colors.white,),
                   label: Text(
-                    "All Blocked Users".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "Block Users".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -160,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   onPressed: ()
                   {
-                    Navigator.push(context, MaterialPageRoute(builder: (c)=> const AllBlockedUsersScreen()));
+
                   },
                 ),
               ],
@@ -174,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.person_add, color: Colors.white,),
                   label: Text(
-                    "All Verified Sellers".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "Activate Sellers".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -197,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.block_flipped, color: Colors.white,),
                   label: Text(
-                    "All Blocked Sellers".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "Block Sellers".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -224,7 +220,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.person_add, color: Colors.white,),
                   label: Text(
-                    "All Verified Riders".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "Activate Riders".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -247,7 +243,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ElevatedButton.icon(
                   icon: const Icon(Icons.block_flipped, color: Colors.white,),
                   label: Text(
-                    "All Blocked Riders".toUpperCase() + "\n" + "Accounts".toUpperCase(),
+                    "Block Riders".toUpperCase() + "\n" + "Accounts".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -283,8 +279,7 @@ class _HomeScreenState extends State<HomeScreen>
               ),
               onPressed: ()
               {
-                FirebaseAuth.instance.signOut();
-                Navigator.push(context, MaterialPageRoute(builder: (c)=> const LoginScreen()));
+
               },
             ),
           ],
