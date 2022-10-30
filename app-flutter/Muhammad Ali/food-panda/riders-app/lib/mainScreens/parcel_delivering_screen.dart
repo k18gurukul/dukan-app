@@ -129,8 +129,7 @@ class _ParcelDeliveringScreenState extends State<ParcelDeliveringScreen>
         children: [
 
           Image.asset(
-            "images/confirm1.png",
-            width: 350,
+            "images/confirm2.png",
           ),
 
           const SizedBox(height: 5,),
@@ -157,7 +156,7 @@ class _ParcelDeliveringScreenState extends State<ParcelDeliveringScreen>
                     SizedBox(height: 12,),
 
                     Text(
-                      "Show Cafe/Restaurant Location",
+                      "Show Delivery Drop-off Location",
                       style: TextStyle(
                         fontFamily: "Signatra",
                         fontSize: 18,

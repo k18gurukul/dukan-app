@@ -4,6 +4,7 @@ import 'package:foodpanda_riders_app/assistantMethods/get_current_location.dart'
 import 'package:foodpanda_riders_app/authentication/auth_screen.dart';
 import 'package:foodpanda_riders_app/global/global.dart';
 import 'package:foodpanda_riders_app/mainScreens/new_orders_screen.dart';
+import 'package:foodpanda_riders_app/mainScreens/not_yet_delivered_screen.dart';
 import 'package:foodpanda_riders_app/mainScreens/parcel_in_progress_screen.dart';
 
 
@@ -65,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen>
             if(index == 2)
             {
               //Not Yet Delivered
-
+              Navigator.push(context, MaterialPageRoute(builder: (c)=> NotYetDeliveredScreen()));
             }
             if(index == 3)
             {
